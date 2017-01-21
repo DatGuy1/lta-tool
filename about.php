@@ -94,7 +94,9 @@ if( !isset($_SESSION['uid']) ){
                 <h3>Personal information</h3>
                 <p>Please treat all information stored on this tool as publicly accessible - although efforts have been taken to ensure the security of data stored here, we can't be held responsible for it falling into the wrong hands. Do not store sensitive information on this tool.</p>
                 <h3>Source</h3>
-                <p>Source code to be published on GitHub..</p>
+                <p><a href='https://github.com/lta-knowledgebase/lta-tool'>Available here</a></p>
+                <h3>Licence</h3>
+                <p><a href='https://raw.githubusercontent.com/lta-knowledgebase/lta-tool/master/LICENSE'>GPL-3.0</a></p>
                 <h3>Support</h3>
                 <p>Please report bugs to the <a href='https://phabricator.wikimedia.org/tag/tool-labs-tools-lta-knowledgebase/'>phabricator project</a>.</p>
             </div>
