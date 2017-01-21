@@ -5,28 +5,39 @@ if( !isset($_SESSION['uid']) ){
 }
 $userid = $_SESSION['uid'];
 
+//import database connection information
 include("config.php");
 
+//connect to DB, retrieve useful information about currently logged in user
 $sql = "SELECT * FROM users WHERE uid = '$userid'";
 $result = mysqli_query($db,$sql);
 $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+
 $acc_username = $row['un'];
 $acc_sul = $row['sul'];
 $acc_acc = $row['acc'];
+
 if($acc_acc == 0){
+    //Set error text for later localisation
     $acc_userright = "Tool admin";
 }elseif($acc_acc == 1){
+    //Set error text for later localisation
     $acc_userright = "Write access";
 }elseif($acc_acc == 2){
+    //Set error text for later localisation
     $acc_userright = "Read access";
 }else{
+    //Set error text for later localisation
     $acc_userright_error = "Bad user right number (not 0,1,2)!";
 }
 
+//get error information
 $error = $_GET['e'];
 if($error == 1){
+    //Set error text for later localisation
     $errormessage = "Incorrect password or new passwords did not match";
 }elseif($error == 2){
+    //Set error text for later localisation
     $errormessage = "Password changed";
 }
 
@@ -116,6 +127,7 @@ if($error == 1){
         <div class="container">
 
             <div class="row">
+                <h3>Account information</h3>
                 <table class='table'>
                     <tr>
                         <td>Tool username:</td>
@@ -141,6 +153,7 @@ if($error == 1){
                     <div class="panel-heading">Change password</div>
                     <div class="panel-body">
                         <?php
+                        //change message based on returned error in GET
                         if($error == 1){
                             echo "<h4>$errormessage</h4>";
                             echo "<a href='account.php'>Try again</a>";
