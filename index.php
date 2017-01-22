@@ -120,11 +120,11 @@ if( !isset($_SESSION['uid']) ){
                                 echo "<tr>";
                                 echo "<td>";
                                 echo "<a href='http://tools.wmflabs.org/lta/view.php?lid=".$row['lid']."'>";
-                                echo $row['ltitle'];
+                                echo htmlentities($row['ltitle']);
                                 echo "</a>";
                                 echo "</td>";
                                 echo "<td>";
-                                echo $row['lshortdesc'];
+                                echo htmlentities($row['lshortdesc']);
                                 echo "</td>";
                                 echo "</tr>";
                             }

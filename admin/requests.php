@@ -113,14 +113,14 @@ $result_newaccounts = mysqli_query($db,$sql_newaccounts);
                     <tbody>
                         <?php
                         while($row_na = mysqli_fetch_assoc($result_newaccounts)){
-                                $diff = $row_na['reqdiff'];
+                                $diff = htmlentities($row_na['reqdiff']);
                                 $accid = $row_na['reqid'];
                                 echo "<tr>";
                                 echo "<td>";
-                                echo $row_na['requn'];
+                                echo htmlentities($row_na['requn']);
                                 echo "</td>";
                                 echo "<td>";
-                                echo $row_na['reqsul'];
+                                echo htmlentities($row_na['reqsul']);
                                 echo "</td>";
                                 echo "<td>";
                                 echo "<a href='https://en.wikipedia.org/wiki/Special:Diff/$diff'>Diff</a>";

@@ -32,7 +32,7 @@ if($acc_acc == 0){
 }
 
 //get error information
-$error = $_GET['e'];
+$error = htmlentities($_GET['e']);
 if($error == 1){
     //Set error text for later localisation
     $errormessage = "Incorrect password or new passwords do not match";
@@ -132,20 +132,20 @@ if($error == 1){
                     <tr>
                         <td>Tool username:</td>
                         <td>
-                            <?php echo $acc_username;?>
+                            <?php echo htmlentities($acc_username);?>
                         </td>
                     </tr>
                     <tr>
                         <td>Wikipedia username:</td>
                         <td>
-                            <?php echo $acc_sul;?>
+                            <?php echo htmlentities($acc_sul);?>
                         </td>
                     </tr>
                     <tr>
                         <tr>
                             <td>Access:</td>
                             <td>
-                                <?php echo $acc_userright;?>
+                                <?php echo htmlentities($acc_userright);?>
                             </td>
                         </tr>
                 </table>

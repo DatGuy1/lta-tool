@@ -108,10 +108,10 @@ if( !isset($_SESSION['uid']) ){
                             while($row = mysqli_fetch_assoc($result)){       
                                 echo "<tr>";
                                 echo "<td>";
-                                echo $row['lta'];
+                                echo htmlentities($row['lta']);
                                 echo "</td>";
                                 echo "<td>";
-                                echo $row['user'];
+                                echo htmlentities($row['user']);
                                 echo "</td>";
                                 echo "<td>";
                                 if($row['ctype'] == 0){
@@ -123,7 +123,7 @@ if( !isset($_SESSION['uid']) ){
                                 }
                                 echo "</td>";
                                 echo "<td>";
-                                echo $row['ctime'];
+                                echo htmlentities($row['ctime']);
                                 echo "</td>";
                                 echo "</tr>";
                             }

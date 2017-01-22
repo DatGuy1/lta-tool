@@ -117,11 +117,11 @@ $currenttitle = $row['ltitle'];
                         <div class="panel panel-info">
                             <div class="panel-heading">Description</div>
                             <div class="panel-body">
-                                <input type="hidden" name="ltaid" value="<?php echo $currentlid; ?>">
-                                <input type="hidden" name="ltatitle" value="<?php echo $currenttitle; ?>">
-                                <input type='text' class="form-control" name='shortdesc' value='<?php echo $row['lshortdesc']; ?>' id='shortdesc'/>
+                                <input type="hidden" name="ltaid" value="<?php echo htmlentities($currentlid); ?>">
+                                <input type="hidden" name="ltatitle" value="<?php echo htmlentities($currenttitle); ?>">
+                                <input type='text' class="form-control" name='shortdesc' value='<?php echo htmlentities($row['lshortdesc']); ?>' id='shortdesc'/>
                                 <br/>
-                                <textarea class="form-control" rows=30 name='description' id="description"><?php echo $row['ldesc']; ?></textarea>
+                                <textarea class="form-control" rows=30 name='description' id="description"><?php echo htmlentities($row['ldesc']); ?></textarea>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-default">Save all sections</button>
@@ -133,16 +133,16 @@ $currenttitle = $row['ltitle'];
                                 <p>This LTA was last active
                                     <?php echo $row['lseen']; ?>
                                 </p>
-                                <textarea class="form-control" rows=16 id="traits" name="traits"><?php echo $row['lglance']; ?></textarea>
+                                <textarea class="form-control" rows=16 id="traits" name="traits"><?php echo htmlentities($row['lglance']); ?></textarea>
                             </div>
                         </div>
                         <div class="panel panel-info">
                             <div class="panel-heading">Actions to take</div>
                             <div class="panel-body">
-                                <textarea class="form-control" rows=16 id="actions" name="actions"><?php echo $row['lactions']; ?></textarea>
+                                <textarea class="form-control" rows=16 id="actions" name="actions"><?php echo htmlentities($row['lactions']); ?></textarea>
                             </div>
                         </div>
-                        <small>Last edited <?php echo $row['leditat']; ?> by <?php echo $row['leditor']; ?></small>
+                        <small>Last edited <?php echo htmlentities($row['leditat']); ?> by <?php echo htmlentities($row['leditor']); ?></small>
                     </div>
 
             </form>

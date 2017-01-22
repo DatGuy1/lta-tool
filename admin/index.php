@@ -113,14 +113,14 @@ $result_newaccounts = mysqli_query($db,$sql_newaccounts);
                                 if($row_na['last'] == ""){
                                     $lastlogin = "Not yet logged in";
                                 }else{
-                                    $lastlogin = $row_na['last'];
+                                    $lastlogin = htmlentities($row_na['last']);
                                 }
                                 echo "<tr>";
                                 echo "<td>";
-                                echo $row_na['un'];
+                                echo htmlentities($row_na['un']);
                                 echo "</td>";
                                 echo "<td>";
-                                echo $row_na['creationdate'];
+                                echo htmlentities($row_na['creationdate']);
                                 echo "</td>";
                                 echo "<td>";
                                 echo $lastlogin;

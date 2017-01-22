@@ -115,13 +115,13 @@ $currentlid = $row['lid'];
                     }
                 ?>
             </h2>
-            <p><small>Permalink: <a href='http://tools.wmflabs.org/lta/view.php?lid=<?php echo $currentlid ?>'>http://tools.wmflabs.org/lta/view.php?lid=<?php echo $row['lid']; ?></a></small></p>
+            <p><small>Permalink: <a href='http://tools.wmflabs.org/lta/view.php?lid=<?php echo htmlentities($currentlid) ?>'>http://tools.wmflabs.org/lta/view.php?lid=<?php echo htmlentities($row['lid']); ?></a></small></p>
             <div class="row">
                 <div class="col-sm-8">
                     <div class="panel panel-info">
                         <div class="panel-heading">Description</div>
                         <div class="panel-body">
-                            <?php echo $row['ldesc']; ?>
+                            <?php echo htmlentities($row['ldesc']); ?>
                         </div>
                     </div>
                 </div>
@@ -130,18 +130,18 @@ $currentlid = $row['lid'];
                         <div class="panel-heading">Traits</div>
                         <div class="panel-body">
                             <p>This LTA was last active
-                                <?php echo $row['lseen']; ?>
+                                <?php echo htmlentities($row['lseen']); ?>
                             </p>
-                            <?php echo $row['lglance']; ?>
+                            <?php echo htmlentities($row['lglance']); ?>
                         </div>
                     </div>
                     <div class="panel panel-info">
                         <div class="panel-heading">Actions to take</div>
                         <div class="panel-body">
-                            <?php echo $row['lactions']; ?>
+                            <?php echo htmlentities($row['lactions']); ?>
                         </div>
                     </div>
-                    <small>Last edited <?php echo $row['leditat']; ?> by <?php echo $row['leditor']; ?></small>
+                    <small>Last edited <?php echo htmlentities($row['leditat']); ?> by <?php echo htmlentities($row['leditor']); ?></small>
                 </div>
             </div>
             <!-- /.row -->
