@@ -111,7 +111,12 @@ if($userrights != 0){
                             <br/>
                             <input type='text' name='confirmsuspendusername' class='form-control' placeholder='Confirm username to suspend' />
                             <br/>
-                            <button type="submit" class="btn btn-default" disabled>Suspend account (no email)</button>
+                            <button type="submit" name="suspendsubmit" class="btn btn-default">Suspend account (no email)</button>
+                           <?php
+                           if(empty($_POST['suspendusername'])||($_POST['confirmsuspendusername'])) {
+                              echo "<font color="red">One of the textboxes are empty.</font>"
+                           if(isset($_POST["
+                           ?>
                         </form>
                     </div>
                 </div>
