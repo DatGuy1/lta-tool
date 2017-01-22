@@ -28,7 +28,7 @@ $leditat = $row['leditat'];
 $lcreator = $row['lcreator'];
 
 // Now actually delete it
-$sql_delete = "DELETE FROM ltalist ($ltitle, $ldesc, $lshortdesc, $lglance, $lactions, $lcreator, $leditor, $leditat)";
+$sql_delete = "DELETE FROM ltalist WHERE lid = '$ltaid'";
 mysqli_query($db,$sql_delete);
 
 $sqluser = "SELECT * FROM user WHERE uid = '$lcreator'";
