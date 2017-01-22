@@ -111,11 +111,28 @@ if($userrights != 0){
                             <br/>
                             <input type='text' name='confirmsuspendusername' class='form-control' placeholder='Confirm username to suspend' />
                             <br/>
-                            <button type="submit" name="suspendsubmit" class="btn btn-default">Suspend account (no email)</button>
+                            <button type="submit" name="suspendsubmit" class="btn btn-default">Suspend</button>
                            <?php
                            if(empty($_POST['suspendusername'])||($_POST['confirmsuspendusername'])) {
-                              echo "<font color="red">One of the textboxes are empty.</font>"
-                           if(isset($_POST["
+                              echo "<font color=\"red\">One of the textboxes are empty</font>";
+                           }
+                           if(isset($_POST["suspendsubmit"])) {
+                              if ($_POST['suspendusername'] !=== $_POST['confirmsuspendusername']) {
+                                 echo "<font color=\"red\">Both fields do not match</font>";
+                                 break;
+                              } else {
+                                 $notinusersql = "SELECT * FROM users WHERE un = '$_POST['suspendusername']'";
+                                 $resinusersql = mysqli_query($db,$notinusersql);
+                                 if (mysqli_num_rows($resinusersql) == 0) {
+                                    echo "<font color=\"red\">User does not exist</font>";
+                                    break;
+                                 } else {
+                                    $sql_suspend = "UPDATE users SET enabled = '0' WHERE un = '$_POST['suspendusername']'";
+                                    mysqli_query($db,$sql_suspend);
+                                    echo "Succesfully suspended user";
+                                 }
+                              }
+                           }
                            ?>
                         </form>
                     </div>
