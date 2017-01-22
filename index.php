@@ -95,8 +95,8 @@ if( !isset($_SESSION['uid']) ){
                 <form action='view.php' method='post'>
                     <div class="search-group">
                         <label for="lt">Search LTA</label>
-                        <input type="text" class="form-control" id="lt" name='lt' aria-describedby="searchhelp" placeholder="Samtar">
-                        <small id="searchhelp" class="form-text text-muted">Search currently only matches exact LTA titles (I'm working on that!)</small>
+                        <input type="text" class="form-control" id="lt" name='lt' aria-describedby="searchhelp" placeholder="Orangemoody">
+                        <small id="searchhelp" class="form-text text-muted">Search currently only matches exact LTA titles (in development)</small>
                     </div>
                     <br/>
                     <button type="submit" class="btn btn-primary">Search &raquo;</button> 

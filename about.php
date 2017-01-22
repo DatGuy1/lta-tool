@@ -98,11 +98,11 @@ include("version.php");
                 <h3>What is it?</h3>
                 <p>This tool hopes to be a better alternative to the Wikipedia LTA pages, which are often cited as an example of <a href='https://en.wikipedia.org/wiki/Wikipedia:Don%27t_stuff_beans_up_your_nose'>[[WP:BEANS]]</a> and detract from the premise of <a href='https://en.wikipedia.org/wiki/Wikipedia:Deny_recognition'>[[WP:DENY]]</a>. By taking this information off-wiki, we can control access to the data whilst being able to keep useful information about long-term abuse cases.</p>
                 <h3>Personal information</h3>
-                <p>Please treat all information stored on this tool as publicly accessible - although efforts have been taken to ensure the security of data stored here, we can't be held responsible for it falling into the wrong hands. Do not store sensitive information on this tool.</p>
-                <h2>Tech stuff</h2>
+                <p>Please treat all information stored on this tool as publicly accessible. Although efforts have been taken to ensure the security of data stored here securely, we can't be held responsible for it falling into the wrong hands. Please do not store <i>any</i> sensitive information on this tool.</p>
+                <h2>Tech-related</h2>
                 <h3>Source</h3>
-                <p><a href='https://github.com/lta-knowledgebase/lta-tool'>Available here</a></p>
-                <h3>Licence</h3>
+                <p><a href='https://github.com/lta-knowledgebase/lta-tool'>Available here on GitHub</a></p>
+                <h3>License</h3>
                 <p><a href='https://raw.githubusercontent.com/lta-knowledgebase/lta-tool/master/LICENSE'>GPL-3.0</a></p>
                 <h3>Support</h3>
                 <p>Please report bugs to the <a href='https://phabricator.wikimedia.org/tag/tool-labs-tools-lta-knowledgebase/'>phabricator project</a>.</p>

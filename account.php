@@ -28,14 +28,14 @@ if($acc_acc == 0){
     $acc_userright = "Read access";
 }else{
     //Set error text for later localisation
-    $acc_userright_error = "Bad user right number (not 0,1,2)!";
+    $acc_userright_error = "Bad user right number (not 0, 1, or 2)";
 }
 
 //get error information
 $error = $_GET['e'];
 if($error == 1){
     //Set error text for later localisation
-    $errormessage = "Incorrect password or new passwords did not match";
+    $errormessage = "Incorrect password or new passwords do not match";
 }elseif($error == 2){
     //Set error text for later localisation
     $errormessage = "Password changed";

@@ -8,7 +8,7 @@ if($errorno == '1'){
     $ereason = "LTA not found";
     $ehelp = "Please ensure you have entered the correct LTA name or ID";
 }elseif($errorno == 'editperm'){
-    $ereason = "Incorrect permissions";
+    $ereason = "Insufficient permissions";
     $ehelp = "You are not a LTA editor or this LTA has been locked from editing";
 }
 ?>

@@ -100,7 +100,7 @@ if($userrights != 0){
                 <div class="panel panel-warning">
                     <div class="panel-heading">Modify account</div>
                     <div class="panel-body">
-                        <p class='text-muted'>Not available..</p>
+                        <p class='text-muted'>Unavailable</p>
                     </div>
                 </div>
                 <div class="panel panel-danger">

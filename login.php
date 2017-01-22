@@ -47,7 +47,7 @@ if( isset($_SESSION['uid']) ){
                 <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
                     <form role="form" action="login_process.php" method="POST">
                         <fieldset>
-                            <h2>Please Sign In</h2>
+                            <h2>Please sign in</h2>
                             <div class='text-muted'>or <a href='request'>request an account</a></div>
                             <hr class="colorgraph">
                             <div class="form-group">
