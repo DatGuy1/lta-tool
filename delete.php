@@ -33,7 +33,7 @@ mysqli_query($db,$sql_delete);
 
 $sqluser = "SELECT * FROM user WHERE uid = '$lcreator'";
 $userresult = mysqli_query($db,$sqluser);
-$userrow = mysqli_fetch_array($result,MYSQLI_ASSOC);
+$userrow = mysqli_fetch_array($userresult,MYSQLI_ASSOC);
 
 // Send an email
 $to = $userrow['email'];
