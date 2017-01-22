@@ -25,7 +25,7 @@ $lcreator = $row['lcreator'];
 $sql_delete = "DELETE FROM ltalist WHERE lid = '$ltaid'";
 mysqli_query($db,$sql_delete);
 
-$sqluser = "SELECT * FROM user WHERE uid = '$lcreator'";
+$sqluser = "SELECT * FROM users WHERE uid = '$lcreator'";
 $userresult = mysqli_query($db,$sqluser);
 $userrow = mysqli_fetch_array($userresult,MYSQLI_ASSOC);
 
