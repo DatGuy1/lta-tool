@@ -36,8 +36,8 @@ $userresult = mysqli_query($db,$sqluser);
 $userrow = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
 // Send an email
-$to = $userresult['email'];
-$username = $userresult['un'];
+$to = $userrow['email'];
+$username = $userrow['un'];
 $subject = "LTA Knowledgebase LTA deleted";
 
 $message = "
@@ -65,4 +65,4 @@ mail($to,$subject,$message,$headers);
 
 
 
-header( 'Location: http://tools.wmflabs.org/lta/admin' ) ;
+header( 'Location: http://tools.wmflabs.org/lta' ) ;
