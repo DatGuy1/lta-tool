@@ -1,6 +1,7 @@
 <?php
 session_start();
 $userrights = $_SESSION['acc'];
+
 if( !isset($_SESSION['uid']) ){
    header( 'Location: http://tools.wmflabs.org/lta/login.php' ) ; 
 }
@@ -9,30 +10,34 @@ if($userrights != '0'){
 }
 
 include("../config.php");
-/*
-$approvedaccid = $_GET['reqid'];
-$sql_update = "UPDATE accrequests SET status = '1' WHERE reqid = '$approvedaccid'";
-mysqli_query($db,$sql_update);
 
-$sql_insert = "INSERT INTO users (un, email, sul, pass) SELECT requn, reqemail, reqsul, reqpass FROM accrequests WHERE reqid = $approvedaccid";
-mysqli_query($db,$sql_insert);
+$ltaid = $_GET["lid"];
 
-$sql_getinfo = "SELECT * from users ORDER BY uid DESC LIMIT 1";
-$newinfo = mysqli_query($db,$sql_getinfo);
-$row_info = mysqli_fetch_assoc($newinfo);
-$uid = $row_info['uid'];
+$sqlinfo = "SELECT * FROM ltalist WHERE lid = '$ltaid'";
+$result = mysqli_query($db,$sqlinfo);
+$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
+// Information for what to delete
+$ltitle = $row['ltitle'];
+$ldesc = $row['ldesc'];
+$lshortdesc = $row['lshortdesc'];
+$lglance = $row['lglance'];
+$lactions = $row['lactions'];
+$leditor = $row['leditor'];
+$leditat = $row['leditat'];
+$lcreator = $row['lcreator'];
 
-$datetime = date("Y-m-d h:i:s");
-$sql_finish = "UPDATE users SET enabled = 1, acc = 2, creationdate = '$datetime' WHERE uid = '$uid'";
-mysqli_query($db,$sql_finish);
+// Now actually delete it
+$sql_delete = "DELETE FROM ltalist ($ltitle, $ldesc, $lshortdesc, $lglance, $lactions, $lcreator, $leditor, $leditat)";
+mysqli_query($db,$sql_delete);
 
-Is a work in progress
-*/
+$sqluser = "SELECT * FROM user WHERE uid = '$lcreator'";
+$userresult = mysqli_query($db,$sqluser);
+$userrow = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
-//now send an email
-$to = $row_info['email'];
-$username = $row_info['un'];
+// Send an email
+$to = $userresult['email'];
+$username = $userresult['un'];
 $subject = "LTA Knowledgebase LTA deleted";
 
 $message = "
@@ -44,7 +49,7 @@ $message = "
 <p>Dear $username</p>
 <p>Your LTA on the Knowledgebase has been deleted.</p>
 <br/>
-<p>Please do not create any LTAs until you've seen the guide</p> //Add link to guide
+<p>Please do not create any LTAs until you've seen the guide</p>
 <br/>
 <br/>
 <p>Kind regards,</p>
