@@ -17,7 +17,7 @@ $sqlinfo = "SELECT * FROM ltalist WHERE lid = '$ltaid'";
 $result = mysqli_query($db,$sqlinfo);
 $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
-// Informatrion for email
+// Information for email
 $ltitle = $row['ltitle'];
 $lcreator = $row['lcreator'];
 
