@@ -17,14 +17,8 @@ $sqlinfo = "SELECT * FROM ltalist WHERE lid = '$ltaid'";
 $result = mysqli_query($db,$sqlinfo);
 $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
-// Information for what to delete
+// Informatrion for email
 $ltitle = $row['ltitle'];
-$ldesc = $row['ldesc'];
-$lshortdesc = $row['lshortdesc'];
-$lglance = $row['lglance'];
-$lactions = $row['lactions'];
-$leditor = $row['leditor'];
-$leditat = $row['leditat'];
 $lcreator = $row['lcreator'];
 
 // Now actually delete it
@@ -47,7 +41,7 @@ $message = "
 </head>
 <body>
 <p>Dear $username</p>
-<p>Your LTA on the Knowledgebase has been deleted.</p>
+<p>Your LTA called '$ltitle' on the Knowledgebase has been deleted.</p>
 <br/>
 <p>Please do not create any LTAs until you've seen the guide</p>
 <br/>
