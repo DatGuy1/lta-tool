@@ -40,7 +40,8 @@ $message = "
 <title>LTA Knowledgebase LTA deleted</title>
 </head>
 <body>
-<p>Dear $username</p>
+<p>Dear $username,</p>
+<br/>
 <p>Your LTA called '$ltitle' on the Knowledgebase has been deleted.</p>
 <br/>
 <p>Please do not create any LTAs until you've seen the guide</p>
