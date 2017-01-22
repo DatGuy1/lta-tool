@@ -9,9 +9,9 @@ if($userrights != '0'){
     header( 'Location: http://tools.wmflabs.org/lta/' ) ; //not working
 }
 
-include("../config.php");
+include("config.php");
 
-$ltaid = $_GET["lid"];
+$ltaid = mysqli_real_escape_string($db,$_GET["lid"]);
 
 $sqlinfo = "SELECT * FROM ltalist WHERE lid = '$ltaid'";
 $result = mysqli_query($db,$sqlinfo);
