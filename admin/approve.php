@@ -35,7 +35,7 @@ $subject = "LTA KB account approved";
 $message = "
 <html>
 <head>
-<title>LTA KB account approved</title>
+<title>LTA Knowledgebase account approved</title>
 </head>
 <body>
 <p>Dear $username</p>
@@ -45,7 +45,7 @@ $message = "
 <br/>
 <br/>
 <p>Kind regards,</p>
-<p>LTA KB Tool Admins</p>
+<p>LTA Knowledgebase Tool Admins</p>
 </body>
 </html>
 ";
