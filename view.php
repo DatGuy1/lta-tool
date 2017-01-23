@@ -124,7 +124,7 @@ $currentlid = $row['lid'];
                     <div class="panel panel-info">
                         <div class="panel-heading">Description</div>
                         <div class="panel-body">
-                            <?php echo htmlentities($row['ldesc']); ?>
+                            <?php echo $row['ldesc']; ?>
                         </div>
                     </div>
                 </div>
@@ -133,18 +133,18 @@ $currentlid = $row['lid'];
                         <div class="panel-heading">Traits</div>
                         <div class="panel-body">
                             <p>This LTA was last active
-                                <?php echo htmlentities($row['lseen']); ?>
+                                <?php echo $row['lseen']; ?>
                             </p>
-                            <?php echo htmlentities($row['lglance']); ?>
+                            <?php echo $row['lglance']; ?>
                         </div>
                     </div>
                     <div class="panel panel-info">
                         <div class="panel-heading">Actions to take</div>
                         <div class="panel-body">
-                            <?php echo htmlentities($row['lactions']); ?>
+                            <?php echo $row['lactions']; ?>
                         </div>
                     </div>
-                    <small>Last edited <?php echo htmlentities($row['leditat']); ?> by <?php echo htmlentities($row['leditor']); ?></small>
+                    <small>Last edited <?php echo $row['leditat']; ?> by <?php echo $row['leditor']; ?></small>
                 </div>
             </div>
             <!-- /.row -->
