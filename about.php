@@ -107,7 +107,7 @@ include("version.php");
                 <h3>Support</h3>
                 <p>Please report bugs to the <a href='https://phabricator.wikimedia.org/tag/tool-labs-tools-lta-knowledgebase/'>phabricator project</a>.</p>
                 <h3>Version information</h3>
-                <p>Software version: <?php echo $ver_version; ?></p>
+                <p>Software version: <?php echo htmlentities($ver_version); ?></p>
             </div>
             <!-- /.row -->
 

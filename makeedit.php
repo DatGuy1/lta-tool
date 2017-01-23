@@ -19,12 +19,12 @@ $row_user = mysqli_fetch_array($result_user,MYSQLI_ASSOC);
 
 $editorname = $row['un'];
 
-$newshortdesc = $_POST['shortdesc'];
-$newdesc = $_POST['description'];
-$newtraits = $_POST['traits'];
-$newactions = $_POST['actions'];
-$ltaid = $_POST['ltaid'];
-$ltatitle = $_POST['ltatitle'];
+$newshortdesc = mysqli_real_escape_string($db,$_POST['shortdesc']);
+$newdesc = mysqli_real_escape_string($db,$_POST['description']);
+$newtraits = mysqli_real_escape_string($db,$_POST['traits']);
+$newactions = mysqli_real_escape_string($db,$_POST['actions']);
+$ltaid = mysqli_real_escape_string($db,$_POST['ltaid']);
+$ltatitle = mysqli_real_escape_string($db,$_POST['ltatitle']);
 
 
 $sql = "SELECT * FROM ltalist WHERE lid = '$ltaid'";

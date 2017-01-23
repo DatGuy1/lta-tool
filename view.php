@@ -113,9 +113,12 @@ $currentlid = $row['lid'];
                     }elseif($_SESSION['acc'] == 1){
                         echo " <small>[<a href='edit.php?lid=$currentlid'>edit</a>]</small>";
                     }
+                    if($_SESSION['acc'] == 0) {
+                        echo " <small>[<a href='delete.php?lid=$currentlid'>delete</a>]</small>";
+                    }
                 ?>
             </h2>
-            <p><small>Permalink: <a href='http://tools.wmflabs.org/lta/view.php?lid=<?php echo $currentlid ?>'>http://tools.wmflabs.org/lta/view.php?lid=<?php echo $row['lid']; ?></a></small></p>
+            <p><small>Permalink: <a href='http://tools.wmflabs.org/lta/view.php?lid=<?php echo htmlentities($currentlid) ?>'>http://tools.wmflabs.org/lta/view.php?lid=<?php echo htmlentities($row['lid']); ?></a></small></p>
             <div class="row">
                 <div class="col-sm-8">
                     <div class="panel panel-info">

@@ -19,14 +19,14 @@ $row_user = mysqli_fetch_array($result_user,MYSQLI_ASSOC);
 
 $editorname = $row['un'];
 
-$newtitle = $_POST['title'];
-$newdesc = $_POST['description'];
-$newtraits = $_POST['traits'];
-$newactions = $_POST['actions'];
+$newtitle = mysqli_real_escape_string($db,$_POST['title']);
+$newdesc = mysqli_real_escape_string($db,$_POST['description']);
+$newtraits = mysqli_real_escape_string($db,$_POST['traits']);
+$newactions = mysqli_real_escape_string($db,$_POST['actions']);
 
 $datetime = date("Y-m-d h:i:s");
 $editorname = $row_user['un'];
-$sql_update = "INSERT INTO ltalist (ltitle, ldesc, lshortdesc, lglance, lactions, leditor, leditat) VALUES ('$newtitle','$newdesc', '<p>Requires short description entry - please edit</p>', '$newtraits','$newactions','$editor','$datetime')";
+$sql_update = "INSERT INTO ltalist (ltitle, ldesc, lshortdesc, lglance, lactions, leditor, lcreator, leditat) VALUES ('$newtitle','$newdesc', '<p>Requires short description entry - please edit</p>', '$newtraits','$newactions','$editor', '$editor', '$datetime')";
 mysqli_query($db,$sql_update);
 $sql_update_rc = "INSERT INTO ltarecentchanges (lta, user, ctype, ctime) VALUES ('$newtitle','$editorname','1','$datetime')";
 mysqli_query($db,$sql_update_rc);
